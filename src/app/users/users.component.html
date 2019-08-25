@@ -1,0 +1,12 @@
+<div class="app-users">
+    <user-header></user-header>
+    <user-options></user-options>
+    <user-display></user-display>
+</div>
+
+
+<div style="display: none">
+    <confirm-dialog title="Delete User" (clickCancel)="this.cancelled()" (clickConfirm)="this.confirmed()">
+        Do you really want to delete this user?
+    </confirm-dialog>
+</div>
