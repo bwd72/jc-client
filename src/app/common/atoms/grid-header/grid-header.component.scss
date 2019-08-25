@@ -1,0 +1,8 @@
+@import "../../../styles/_config.scss";
+@import "../../../styles/_atoms.scss";
+
+.grid-header {
+    font-family: $grid-header-font;
+    font-weight: bold;
+    font-size: 1.0em;
+}
