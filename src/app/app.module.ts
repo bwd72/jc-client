@@ -8,6 +8,8 @@ import { UserOptionsComponent } from './users/user-options/user-options.componen
 import { UserDisplayComponent } from './users/user-display/user-display.component';
 import { UserHeaderComponent } from './users/user-header/user-header.component';
 import { GridHeaderComponent } from './common/atoms/grid-header/grid-header.component';
+import { UsersComponent } from './users/users.component';
+import { GridSearchFieldComponent } from './common/atoms/grid-search-field/grid-search-field.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { GridHeaderComponent } from './common/atoms/grid-header/grid-header.comp
     UserOptionsComponent,
     UserDisplayComponent,
     UserHeaderComponent,
-    GridHeaderComponent
+    GridHeaderComponent,
+    UsersComponent,
+    GridSearchFieldComponent
   ],
   imports: [
     BrowserModule
