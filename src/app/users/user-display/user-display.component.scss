@@ -1,0 +1,51 @@
+@import "../../styles/_config.scss";
+@import "../../styles/_atoms.scss";
+
+.user-display-content {
+    
+    .user-grid {
+         
+        .user-grid-header {
+            margin: 0;
+            padding: 5px 8px 5px 8px;
+        }
+
+        .user-grid-data {
+            margin: 0;
+            padding: 5px 8px 5px 8px;
+            font-family: $grid-data-font;
+            font-weight: normal;
+            font-size: 1.0em;
+        }
+
+        .user-grid-row  {
+            display: grid;
+            grid-auto-columns: 1fr 1fr 1fr 2fr 0.4fr;
+            grid-auto-rows: 1;
+            grid-auto-flow: column;
+            grid-column-gap: 5px; 
+            margin-bottom: 3px;
+            padding: 2px 2px 0px 2px;
+
+            &.data {
+                line-height: 30px;
+                background-color: $grid-row-background;
+                -webkit-box-shadow: 0px 0px 15px -6px #000000; 
+                box-shadow: 0px 0px 15px -6px #000000;
+
+                .data-row-options {
+                    display: inline-block;
+                    text-align: center;
+                    margin-top: 4px;
+
+                    .delete-img {
+                        &:hover {
+                            content: url("/assets/images/red-x.png");
+                        }    
+                    }
+                }
+            }
+        }
+    }
+
+}

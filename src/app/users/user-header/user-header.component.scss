@@ -1,0 +1,14 @@
+@import "../../styles/_config.scss";
+@import "../../styles/_atoms.scss";
+
+.user-header {
+
+    .user-header-title {
+        font-family: $header-title-font;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #6b717f;
+        padding-left: 20px;
+        padding-bottom: 5px;
+    }
+}
