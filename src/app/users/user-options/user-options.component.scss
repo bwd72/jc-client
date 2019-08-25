@@ -1,0 +1,21 @@
+@import "../../styles/_config.scss";
+@import "../../styles/_atoms.scss";
+
+.user-options {
+    display: grid;
+    grid-auto-columns: auto 40px;
+    padding: 5px 20px 5px 20px;
+
+    .grid-search-field {
+        grid-column: 1;
+    }
+
+    .add-button {
+        grid-column: 2;
+        background-image: url("/assets/images/add-button.png");
+        background-color: $app-background;
+        height: 48px;
+        width: 48px;
+        border: none;
+    }
+}
