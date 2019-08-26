@@ -5,8 +5,13 @@
 </div>
 
 
-<div style="display: none">
+<div>
     <confirm-dialog title="Delete User" (clickCancel)="this.cancelled()" (clickConfirm)="this.confirmed()">
         Do you really want to delete this user?
     </confirm-dialog>
+</div>
+
+
+<div>
+    <user-editor-dialog></user-editor-dialog>
 </div>
