@@ -1,0 +1,12 @@
+@import "../../../styles/_config.scss";
+@import "../../../styles/_atoms.scss";
+
+.data-field {
+
+    .field-input {
+        width: 100%;        
+        padding: 2px;
+        border: 2px solid slategray;
+        border-radius: 3px;
+    }
+}

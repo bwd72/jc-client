@@ -1,0 +1,51 @@
+@import "../../styles/_config.scss";
+@import "../../styles/_atoms.scss";
+@import "../../styles/_modals.scss";
+
+// Overrides for the confirm-dialog
+.modal-outer-shell {
+    width: 600px;
+}
+
+.modal-content {
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    grid-row-gap: 8px;
+    grid-column-gap: 16px;
+
+    #first-name {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #middle-name {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #last-name {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    #username {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #display-name {
+        grid-column: 2 / span 2;
+        grid-row: 2;
+    }
+
+    #email {
+        grid-column: 1 / span 3;
+        grid-row: 3;
+    }
+
+    #description {
+        grid-column: 1 / span 3;
+        grid-row: 4;
+    }
+}
