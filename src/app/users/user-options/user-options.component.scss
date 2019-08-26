@@ -2,8 +2,13 @@
 @import "../../styles/_atoms.scss";
 
 .user-options {
+    *:focus {
+        outline: none;
+    }
+
     display: grid;
     grid-auto-columns: auto 40px;
+    grid-column-gap: 40px;
     padding: 5px 20px 5px 20px;
 
     .grid-search-field {
@@ -12,10 +17,21 @@
 
     .add-button {
         grid-column: 2;
-        background-image: url("/assets/images/add-button.png");
-        background-color: $app-background;
+        
         height: 48px;
         width: 48px;
+        padding: 0;
         border: none;
+        background: transparent;
+
+        .add-button-image {
+            height: 48px;
+            width: 48px;
+            opacity: 0.85;
+
+            &:hover {
+                opacity: 1.0;
+            }
+        }
     }
 }
