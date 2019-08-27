@@ -1,22 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../services/users.service';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+    selector: 'app-users',
+    templateUrl: './users.component.html',
+    styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+    public users: any;
 
-  ngOnInit() {
-  }
+    constructor(private usersService: UsersService) { }
 
-  cancelled() {
-    console.log("Cancelled!");
-  }
+    ngOnInit() {
+        this.usersService.getUsers()
+            .subscribe((users) => { console.log(users); this.users = users.results; });
+    }
 
-  confirmed() {
-    console.log("Confirmed!");
-  }
+    cancelled() {
+        console.log("Cancelled!");
+    }
+
+    confirmed() {
+        console.log("Confirmed!");
+    }
 }
