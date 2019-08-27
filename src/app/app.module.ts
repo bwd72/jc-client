@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
@@ -28,7 +29,8 @@ import { DataTextareaFieldComponent } from './common/atoms/data-textarea-field/d
     DataTextareaFieldComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
