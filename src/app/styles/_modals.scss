@@ -25,6 +25,18 @@
             padding-bottom: 5px;
         }
 
+        .modal-highlighted-content {
+            font-family: $modal-content-font;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+            color: black;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+            padding-bottom: 5px;
+        }
+
         .modal-content {
             font-family: $modal-content-font;
             font-size: 1em;
