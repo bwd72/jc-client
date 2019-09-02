@@ -16,13 +16,25 @@
         background: $modal-background;
         padding: 5px;
 
-        .modal-title {
-            font-family: $modal-title-font;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #6b717f;
-            padding-left: 20px;
+        .modal-title-row {
+
             padding-bottom: 5px;
+            display: grid;
+            grid-auto-columns: 200px auto 40px;
+            grid-auto-rows: 1;
+
+            .modal-title {
+                grid-column: 1;
+                font-family: $modal-title-font;
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #6b717f;
+                padding-left: 20px;
+            }
+
+            .modal-title-icon {
+                grid-column: 3;
+            }
         }
 
         .modal-highlighted-content {

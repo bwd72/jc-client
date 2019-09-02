@@ -8,15 +8,15 @@
 
 <confirm-dialog #confirmDeleteDialog
     [ngClass]="{'show-dialog': this.showDeleteDialog, 'hide-dialog': !this.showDeleteDialog}" title="Delete User"
-    [highlightedInfo]="this.selectedUser?.firstname + ' ' + this.selectedUser?.lastname"
-    (clickCancel)="this.cancelled()" (clickConfirm)="this.confirmed()">
+    [highlightedInfo]="this.selectedUser?.username + ' (' + this.selectedUser?.email + ')'"
+    (clickCancel)="this.cancelDelete()" (clickConfirm)="this.confirmDelete()">
     Do you really want to delete this user?
 </confirm-dialog>
 
 
 <user-editor-dialog #userEditorDialog
     [ngClass]="{'show-dialog': this.showEditDialog, 'hide-dialog': !this.showEditDialog}" [(user)]="selectedUser"
-    (closeEvent)="this.closeEditDialog()">
+    (closeEvent)="this.closeEditDialog()" (updateEvent)="this.updateUser($event)">
 </user-editor-dialog>
 
 

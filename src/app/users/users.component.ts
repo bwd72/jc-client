@@ -40,17 +40,10 @@ export class UsersComponent implements OnInit {
     }
 
 
-    cancelled() {
-        this.showDeleteDialog = false;
-    }
 
-
-    confirmed() {
-        console.log("Confirmed!  USER IS TOAST!!!");
-    }
-
-
-    // TODO: create types for the object passed in, instead of any
+    /*
+    ** Edit/Update Methods --------------------------------------------------------------------------------
+    */
     selectUser(event: any) {
         if (!this.showDeleteDialog && !this.showNewDialog) {
             this.selectedUser = this.findUserById(event.id);
@@ -63,13 +56,23 @@ export class UsersComponent implements OnInit {
         }
     }
 
-
     closeEditDialog() {
         this.showEditDialog = false;
     }
 
+    public updateUser(waitIcon: any) {
+        waitIcon.show = true;
 
-    // TODO: create types for the object passed in, instead of any
+        setTimeout(() => {
+            waitIcon.show = false;
+        }, 2000);
+    }
+
+
+
+    /*
+    ** Delete Methods --------------------------------------------------------------------------------
+    */
     deleteUser(event: any) {
         if (!this.showEditDialog && !this.showNewDialog) {
             this.selectedUser = this.findUserById(event.id);
@@ -82,13 +85,30 @@ export class UsersComponent implements OnInit {
         }
     }
 
+    public cancelDelete() {
+        this.showDeleteDialog = false;
+    }
 
+    public confirmDelete() {
+        console.log("Confirmed!  USER IS TOAST!!!", this.selectedUser.id);
+        this.usersService.deleteUser(this.selectedUser.id)
+            .subscribe((user) => {
+                this.showDeleteDialog = false;
+                this.usersService.getUsers()
+                    .subscribe((users) => { this.users = users.results; });
+            });
+    }
+
+
+
+    /*
+    ** Create Methods --------------------------------------------------------------------------------
+    */
     addUser() {
         if (!this.showDeleteDialog && !this.showEditDialog) {
             this.showNewDialog = true;
         }
     }
-
 
     // TODO: create types for the object passed in, instead of any
     // TODO: error handling
@@ -113,7 +133,6 @@ export class UsersComponent implements OnInit {
                     });
             });
     }
-
 
     public cancelNewUser() {
         this.showNewDialog = false;

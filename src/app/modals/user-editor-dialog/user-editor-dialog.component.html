@@ -1,7 +1,13 @@
 <div class="modal-outer-shell">
     <div class="modal-inner-area">
-        <div class="modal-title">
-            User Details
+        <div class="modal-title-row">
+            <div class="modal-title">
+                User Details
+            </div>
+            <div class="modal-title-icon"
+                [ngClass]="{'show-wait-icon': this.waitIcon.show, 'hide-wait-icon': !this.waitIcon.show}">
+                <img class="delete-img" src="/assets/images/waiting.gif" alt="Waiting" />
+            </div>
         </div>
 
         <div class="atom-separator"></div>
@@ -9,37 +15,40 @@
         <div class="modal-content">
             <div id="first-name">
                 <div class="field-name">First Name</div>
-                <input type="text" class="field-input" [(ngModel)]="user.firstname" />
+                <input type="text" class="field-input" [(ngModel)]="user.firstname" (ngModelChange)="changed($event)" />
             </div>
 
             <div id="middle-name">
                 <div class="field-name">Middle Name</div>
-                <input type="text" class="field-input" [(ngModel)]="user.middlename" />
+                <input type="text" class="field-input" [(ngModel)]="user.middlename"
+                    (ngModelChange)="changed($event)" />
             </div>
 
             <div id="last-name">
                 <div class="field-name">Last Name</div>
-                <input type="text" class="field-input" [(ngModel)]="user.lastname" />
+                <input type="text" class="field-input" [(ngModel)]="user.lastname" (ngModelChange)="changed($event)" />
             </div>
 
             <div id="username">
                 <div class="field-name">Username</div>
-                <input type="text" class="field-input" [(ngModel)]="user.username" />
+                <input type="text" class="field-input" [(ngModel)]="user.username" (ngModelChange)="changed($event)" />
             </div>
 
             <div id="display-name">
                 <div class="field-name">Display Name</div>
-                <input type="text" class="field-input" [(ngModel)]="user.displayname" />
+                <input type="text" class="field-input" [(ngModel)]="user.displayname"
+                    (ngModelChange)="changed($event)" />
             </div>
 
             <div id="email">
                 <div class="field-name">Email</div>
-                <input type="text" class="field-input" [(ngModel)]="user.email" />
+                <input type="text" class="field-input" [(ngModel)]="user.email" (ngModelChange)="changed($event)" />
             </div>
 
             <div id="description">
                 <div class="field-name">Description</div>
-                <textarea class="field-textarea" rows="3" [(ngModel)]="user.description"></textarea>
+                <textarea class="field-textarea" rows="3" [(ngModel)]="user.description"
+                    (ngModelChange)="changed($event)"></textarea>
             </div>
 
         </div>
