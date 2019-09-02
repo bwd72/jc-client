@@ -1,17 +1,20 @@
 <div class="app-users">
     <user-header></user-header>
     <user-options></user-options>
-    <user-display [users]="this.users"></user-display>
+    <user-display [users]="this.users" (selectEvent)="this.selectUser($event)" (deleteEvent)="this.deleteUser($event)">
+    </user-display>
 </div>
 
 
-<div>
-    <confirm-dialog title="Delete User" (clickCancel)="this.cancelled()" (clickConfirm)="this.confirmed()">
-        Do you really want to delete this user?
-    </confirm-dialog>
-</div>
+<confirm-dialog #confirmDeleteDialog
+    [ngClass]="{'show-dialog': this.showDeleteDialog, 'hide-dialog': !this.showDeleteDialog}" title="Delete User"
+    [highlightedInfo]="this.selectedUser?.firstname + ' ' + this.selectedUser?.lastname"
+    (clickCancel)="this.cancelled()" (clickConfirm)="this.confirmed()">
+    Do you really want to delete this user?
+</confirm-dialog>
 
 
-<div>
-    <user-editor-dialog></user-editor-dialog>
-</div>
+
+<user-editor-dialog #userEditorDialog
+    [ngClass]="{'show-dialog': this.showEditDialog, 'hide-dialog': !this.showEditDialog}" [(user)]="selectedUser">
+</user-editor-dialog>

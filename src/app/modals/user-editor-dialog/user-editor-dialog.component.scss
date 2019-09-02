@@ -2,10 +2,11 @@
 @import "../../styles/_atoms.scss";
 @import "../../styles/_modals.scss";
 
-// Overrides for the confirm-dialog
+// Overrides over _modals
 .modal-outer-shell {
     width: 600px;
 }
+
 
 .modal-content {
     display: grid;
@@ -13,6 +14,20 @@
     grid-auto-flow: column;
     grid-row-gap: 8px;
     grid-column-gap: 16px;
+
+    .field-input {
+        width: 100%;        
+        padding: 2px;
+        border: 2px solid slategray;
+        border-radius: 3px;
+    }
+
+    .field-textarea {
+        width: 100%;        
+        padding: 2px;
+        border: 2px solid slategray;
+        border-radius: 3px;
+    }
 
     #first-name {
         grid-column: 1;

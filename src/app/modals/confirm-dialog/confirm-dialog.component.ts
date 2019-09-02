@@ -8,6 +8,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class ConfirmDialogComponent implements OnInit {
     @Input() title: string;
+    @Input() highlightedInfo: string;
     @Output() clickCancel: EventEmitter<any> = new EventEmitter<any>();
     @Output() clickConfirm: EventEmitter<any> = new EventEmitter<any>();
 

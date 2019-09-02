@@ -7,13 +7,41 @@
         <div class="atom-separator"></div>
 
         <div class="modal-content">
-            <data-field id="first-name" name="First Name"></data-field>
-            <data-field id="middle-name" name="Middle Name"></data-field>
-            <data-field id="last-name" name="Last Name"></data-field>
-            <data-field id="username" name="Username"></data-field>
-            <data-field id="display-name" name="Display Name"></data-field>
-            <data-field id="email" name="Email"></data-field>
-            <data-textarea-field id="description" name="Description" rows="3"></data-textarea-field>
+            <div id="first-name">
+                <div class="field-name">First Name</div>
+                <input type="text" class="field-input" [(ngModel)]="user.firstname" />
+            </div>
+
+            <div id="middle-name">
+                <div class="field-name">Middle Name</div>
+                <input type="text" class="field-input" [(ngModel)]="user.middlename" />
+            </div>
+
+            <div id="last-name">
+                <div class="field-name">Last Name</div>
+                <input type="text" class="field-input" [(ngModel)]="user.lastname" />
+            </div>
+
+            <div id="username">
+                <div class="field-name">Username</div>
+                <input type="text" class="field-input" [(ngModel)]="user.username" />
+            </div>
+
+            <div id="display-name">
+                <div class="field-name">Display Name</div>
+                <input type="text" class="field-input" [(ngModel)]="user.displayname" />
+            </div>
+
+            <div id="email">
+                <div class="field-name">Email</div>
+                <input type="text" class="field-input" [(ngModel)]="user.email" />
+            </div>
+
+            <div id="description">
+                <div class="field-name">Description</div>
+                <textarea class="field-textarea" rows="3" [(ngModel)]="user.description"></textarea>
+            </div>
+
         </div>
 
         <!-- Little extra space at the end -->
