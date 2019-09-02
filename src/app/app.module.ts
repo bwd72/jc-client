@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
@@ -11,28 +12,25 @@ import { GridHeaderComponent } from './common/atoms/grid-header/grid-header.comp
 import { UsersComponent } from './users/users.component';
 import { GridSearchFieldComponent } from './common/atoms/grid-search-field/grid-search-field.component';
 import { UserEditorDialogComponent } from './modals/user-editor-dialog/user-editor-dialog.component';
-import { DataFieldComponent } from './common/atoms/data-field/data-field.component';
-import { DataTextareaFieldComponent } from './common/atoms/data-textarea-field/data-textarea-field.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ConfirmDialogComponent,
-    UserOptionsComponent,
-    UserDisplayComponent,
-    UserHeaderComponent,
-    GridHeaderComponent,
-    UsersComponent,
-    GridSearchFieldComponent,
-    UserEditorDialogComponent,
-    DataFieldComponent,
-    DataTextareaFieldComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ConfirmDialogComponent,
+        UserOptionsComponent,
+        UserDisplayComponent,
+        UserHeaderComponent,
+        GridHeaderComponent,
+        UsersComponent,
+        GridSearchFieldComponent,
+        UserEditorDialogComponent,
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
