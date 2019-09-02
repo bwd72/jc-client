@@ -24,8 +24,10 @@ export class UserEditorDialogComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+
+        // When the model has changed (and debounce time passes) emit the updateEvent
         this.dataChanged
-            .pipe(debounceTime(300))
+            .pipe(debounceTime(400))
             .subscribe(() => this.updateEvent.emit(this.waitIcon));
     }
 

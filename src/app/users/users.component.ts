@@ -63,9 +63,10 @@ export class UsersComponent implements OnInit {
     public updateUser(waitIcon: any) {
         waitIcon.show = true;
 
-        setTimeout(() => {
-            waitIcon.show = false;
-        }, 2000);
+        this.usersService.updateUser(this.selectedUser)
+            .subscribe((user) => {
+                waitIcon.show = false;
+            });
     }
 
 
@@ -90,7 +91,6 @@ export class UsersComponent implements OnInit {
     }
 
     public confirmDelete() {
-        console.log("Confirmed!  USER IS TOAST!!!", this.selectedUser.id);
         this.usersService.deleteUser(this.selectedUser.id)
             .subscribe((user) => {
                 this.showDeleteDialog = false;
