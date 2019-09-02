@@ -1,6 +1,6 @@
 <div class="app-users">
     <user-header></user-header>
-    <user-options></user-options>
+    <user-options (addEvent)="this.addUser($event)"></user-options>
     <user-display [users]="this.users" (selectEvent)="this.selectUser($event)" (deleteEvent)="this.deleteUser($event)">
     </user-display>
 </div>
@@ -14,8 +14,13 @@
 </confirm-dialog>
 
 
-
 <user-editor-dialog #userEditorDialog
     [ngClass]="{'show-dialog': this.showEditDialog, 'hide-dialog': !this.showEditDialog}" [(user)]="selectedUser"
     (closeEvent)="this.closeEditDialog()">
 </user-editor-dialog>
+
+
+<new-user-dialog #newUserDialog id="newUserDialog"
+    [ngClass]="{'show-dialog': this.showNewDialog, 'hide-dialog': !this.showNewDialog}"
+    (cancelEvent)="this.cancelNewUser()" (createEvent)="this.createNewUser($event)">
+</new-user-dialog>

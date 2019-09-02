@@ -1,0 +1,31 @@
+<div class="modal-outer-shell">
+    <div class="modal-inner-area">
+        <div class="modal-title">
+            New User
+        </div>
+
+        <div class="atom-separator"></div>
+
+        <div class="modal-content">
+
+            <div id="username">
+                <div class="field-name">Username</div>
+                <input #usernameField type="text" class="field-input" />
+            </div>
+
+            <div id="email">
+                <div class="field-name">Email</div>
+                <input #emailField type="text" class="field-input" />
+            </div>
+
+        </div>
+
+        <!-- Little extra space at the end -->
+        <p>
+
+            <div class="modal-controls">
+                <button class="modal-button left" (click)="this.emitCreate()">Create</button>
+                <button class="modal-button right" (click)="this.emitCancel()">Cancel</button>
+            </div>
+    </div>
+</div>

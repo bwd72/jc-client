@@ -1,0 +1,34 @@
+@import "../../styles/_config.scss";
+@import "../../styles/_atoms.scss";
+@import "../../styles/_modals.scss";
+
+// Overrides over _modals
+.modal-outer-shell {
+    width: 600px;
+}
+
+
+.modal-content {
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    grid-row-gap: 8px;
+    grid-column-gap: 16px;
+
+    .field-input {
+        width: 100%;        
+        padding: 2px;
+        border: 2px solid slategray;
+        border-radius: 3px;
+    }
+
+    #username {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #email {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+    }
+}
