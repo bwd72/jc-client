@@ -18,12 +18,10 @@ export class ConfirmDialogComponent implements OnInit {
     }
 
     emitCancel() {
-        console.log("Cancel");
         this.clickCancel.emit("cancel");
     }
 
     emitConfirm() {
-        console.log("Confirm");
         this.clickConfirm.emit("confirm");
     }
 }

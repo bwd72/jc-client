@@ -37,12 +37,14 @@ export class UsersComponent implements OnInit {
         return this.users.find((user) => (id === user.id));
     }
 
+
     cancelled() {
-        console.log("Cancelled!");
+        this.showDeleteDialog = false;
     }
 
+
     confirmed() {
-        console.log("Confirmed!");
+        console.log("Confirmed!  USER IS TOAST!!!");
     }
 
 
@@ -56,6 +58,11 @@ export class UsersComponent implements OnInit {
                 this.showEditDialog = true;
             }
         }
+    }
+
+
+    closeEditDialog() {
+        this.showEditDialog = false;
     }
 
 

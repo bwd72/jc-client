@@ -16,5 +16,6 @@
 
 
 <user-editor-dialog #userEditorDialog
-    [ngClass]="{'show-dialog': this.showEditDialog, 'hide-dialog': !this.showEditDialog}" [(user)]="selectedUser">
+    [ngClass]="{'show-dialog': this.showEditDialog, 'hide-dialog': !this.showEditDialog}" [(user)]="selectedUser"
+    (closeEvent)="this.closeEditDialog()">
 </user-editor-dialog>
