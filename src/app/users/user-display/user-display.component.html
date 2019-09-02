@@ -6,17 +6,19 @@
                 <grid-header name="Last Name" column="lastname"></grid-header>
                 <grid-header name="Username" column="username"></grid-header>
                 <grid-header name="Email" column="email"></grid-header>
-                <grid-header name="Options" column=""></grid-header>
+                <grid-header style="text-align: center" name="Options" column=""></grid-header>
             </li>
         </ul>
 
         <ul class="user-grid-data">
             <li class="user-grid-row data" *ngFor="let user of users">
-                <div>{{user.firstname}}</div>
-                <div>{{user.lastname}}</div>
-                <div>{{user.username}}</div>
-                <div>{{user.email}}</div>
-                <div class="data-row-options"><img class="delete-img" src="/assets/images/blue-x.png" alt="Delete" />
+                <div (click)="this.emitSelect($event, user.id)">{{user.firstname}}</div>
+                <div (click)="this.emitSelect($event, user.id)">{{user.lastname}}</div>
+                <div (click)="this.emitSelect($event, user.id)">{{user.username}}</div>
+                <div (click)="this.emitSelect($event, user.id)">{{user.email}}</div>
+                <div class="data-row-options">
+                    <img class="delete-img" src="/assets/images/blue-x.png" alt="Delete"
+                        (click)="this.emitDelete($event, user.id)" />
                 </div>
             </li>
         </ul>

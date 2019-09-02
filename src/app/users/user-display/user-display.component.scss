@@ -24,7 +24,7 @@
             grid-auto-rows: 1;
             grid-auto-flow: column;
             grid-column-gap: 5px; 
-            margin-bottom: 3px;
+            margin-bottom: 5px;
             padding: 2px 2px 0px 2px;
 
             &.data {
@@ -43,6 +43,10 @@
                             content: url("/assets/images/red-x.png");
                         }    
                     }
+                }
+
+                &:hover {
+                    background-color: $grid-row-highlight-background;
                 }
             }
         }
