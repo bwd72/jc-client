@@ -13,6 +13,7 @@ export class UsersService {
 
     constructor(private http: HttpClient) { }
 
+    // TODO: Remove <any> and build a proper data model
     getUsers(): Observable<any> {
         return this.http.get<any>(this.usersURL);
     }
@@ -23,5 +24,7 @@ export class UsersService {
     }
 
 
-
+    createUser(user: any): Observable<any> {
+        return this.http.post<any>(this.usersURL, user);
+    }
 }

@@ -12,6 +12,7 @@ import { GridHeaderComponent } from './common/atoms/grid-header/grid-header.comp
 import { UsersComponent } from './users/users.component';
 import { GridSearchFieldComponent } from './common/atoms/grid-search-field/grid-search-field.component';
 import { UserEditorDialogComponent } from './modals/user-editor-dialog/user-editor-dialog.component';
+import { NewUserDialogComponent } from './modals/new-user-dialog/new-user-dialog.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { UserEditorDialogComponent } from './modals/user-editor-dialog/user-edit
         UsersComponent,
         GridSearchFieldComponent,
         UserEditorDialogComponent,
+        NewUserDialogComponent,
     ],
     imports: [
         BrowserModule,
